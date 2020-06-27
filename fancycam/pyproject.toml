@@ -8,7 +8,8 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.7"
 flask = "^1.1.1"
-libsass = "^0.20.0"
+libsass = "^0.20.0"  # this needs to go to dev
+picamera = {version = "^1.13", optional = true}
 
 [tool.poetry.dev-dependencies]
 black = "^19.10b0"
@@ -18,6 +19,9 @@ pytest-cov = "^2.8.1"
 ipdb = "^0.12.3"
 pylint = "^2.4.4"
 isort = {extras = ["pyproject"], version = "^4.3.21"}
+
+[tool.poetry.extras]
+picamera = ["picamera"]
 
 [tool.coverage.report]
 fail_under = 100
