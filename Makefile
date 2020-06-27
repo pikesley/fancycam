@@ -8,6 +8,7 @@ build:
 
 run:
 	docker run \
+		--name ${PROJECT} \
 		--volume $(shell pwd)/${PROJECT}:/opt/${PROJECT} \
 		--volume $(shell echo ${HOME})/.ssh:/root/.ssh \
 		--publish 5000:5000 \
