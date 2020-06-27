@@ -1,0 +1,1 @@
+from fancycam import app

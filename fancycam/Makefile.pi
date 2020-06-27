@@ -1,0 +1,11 @@
+install:
+	sudo poetry config virtualenvs.create false
+	sudo poetry install --no-dev
+
+run-api:
+	sudo rm -fr /root/.cache/pypoetry/virtualenvs/
+	sudo poetry run python shobaserver.py
+
+poetry:
+	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+	ln -s /root/.poetry/bin/poetry /usr/local/bin/
