@@ -18,8 +18,8 @@ test:
 	poetry run pytest \
 		--random-order \
 		--pdb \
-		-vv \
-		-s \
+		--verbose \
+		--capture no \
 		--failed-first \
 		--exitfirst
 
