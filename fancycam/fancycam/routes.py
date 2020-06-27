@@ -7,4 +7,4 @@ from fancycam import app
 @app.route("/index")
 def index():
     """The noddiest route."""
-    return render_template("index.html", title="FancyCam")
+    return render_template("index.html", title="FancyCam", bulma_version="0.9.0")
