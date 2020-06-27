@@ -1,0 +1,14 @@
+language: python
+
+python:
+- '3.8'
+
+env:
+- PYTHONPATH=.
+
+install:
+- pip install poetry
+- cd fancycam && make install
+
+script:
+ - make
