@@ -1,3 +1,5 @@
+from flask import render_template
+
 from fancycam import app
 
 
@@ -5,4 +7,4 @@ from fancycam import app
 @app.route("/index")
 def index():
     """The noddiest route."""
-    return "Hello, World!"
+    return render_template("index.html", title="FancyCam")
