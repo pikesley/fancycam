@@ -1,3 +1,17 @@
+// https://bulma.io/documentation/customize/with-sass-cli/
+
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,700');
+$family-sans-serif: "Josefin Sans", sans-serif;
+
+// @import "palettes/default";
+// $primary: $rgba-primary-2;
+// $grey-dark: $primary;
+// $body-background-color: $rgba-complement-1;
+
+@import "bulma/bulma";
+
 h1 {
   text-align: center;
   font-size: 4em;
