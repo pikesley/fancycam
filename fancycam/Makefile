@@ -38,5 +38,4 @@ push-code: clean
 	rsync -av /opt/${PROJECT} pi@${PIHOST}:
 	scp /opt/${PROJECT}/Makefile.pi pi@${PIHOST}:${PROJECT}/Makefile
 
-run-server:
-	FLASK_APP=webserver.py poetry run flask run -h 0.0.0.0
+include make/*

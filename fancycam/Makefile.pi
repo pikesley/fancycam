@@ -1,6 +1,3 @@
-run-server:
-	FLASK_APP=webserver.py poetry run flask run -h 0.0.0.0
-
 initialise: enable-camera apt-installs set-python install-poetry install
 
 install:
@@ -23,3 +20,8 @@ enable-camera:
 	echo start_x=1 >> /tmp/config.txt
 	sudo cp /tmp/config.txt /boot/
 
+remote-atom:
+	sudo curl -o /usr/local/bin/ratom https://raw.githubusercontent.com/aurora/rmate/master/rmate
+	sudo chmod +x /usr/local/bin/ratom
+
+include make/*
