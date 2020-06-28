@@ -7,7 +7,10 @@ black:
 	poetry run black .
 
 isort:
-	poetry run isort --recursive --atomic --apply
+	poetry run isort \
+		--recursive \
+		--atomic \
+		--apply
 
 lint:
 	poetry run pylint \

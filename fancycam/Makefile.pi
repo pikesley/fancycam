@@ -1,11 +1,25 @@
+run-server:
+	FLASK_APP=webserver.py poetry run flask run -h 0.0.0.0
+
+initialise: enable-camera apt-installs set-python install-poetry install
+
 install:
-	sudo poetry config virtualenvs.create false
-	sudo poetry install --no-dev
+	poetry install --no-dev --extras picamera
 
-run-api:
-	sudo rm -fr /root/.cache/pypoetry/virtualenvs/
-	sudo poetry run python shobaserver.py
+set-python:
+	sudo update-alternatives --install /usr/local/bin/python python /usr/bin/python2 1
+	sudo update-alternatives --install /usr/local/bin/python python /usr/bin/python3 2
 
-poetry:
+install-poetry:
 	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-	ln -s /root/.poetry/bin/poetry /usr/local/bin/
+	sudo ln -sf /home/pi/.poetry/bin/poetry /usr/local/bin/
+
+apt-installs:
+	sudo apt-get update
+	sudo apt-get install -y python3-pip python3-venv vim screen
+
+enable-camera:
+	cat /boot/config.txt | grep -v start_x > /tmp/config.txt
+	echo start_x=1 >> /tmp/config.txt
+	sudo cp /tmp/config.txt /boot/
+
