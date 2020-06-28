@@ -15,5 +15,6 @@ run:
 		--env PIHOST=hqcam.local \
 		--interactive \
 		--tty \
+		--rm \
 		${ID} \
 		bash
