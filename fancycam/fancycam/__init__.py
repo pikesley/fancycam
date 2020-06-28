@@ -3,6 +3,7 @@ from flask import Flask
 from sassutils.wsgi import SassMiddleware
 
 app = Flask(__name__)
+TEMPLATES_AUTO_RELOAD = True
 
 
 app.wsgi_app = SassMiddleware(
