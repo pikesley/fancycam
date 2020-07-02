@@ -2,4 +2,11 @@
 
 {% block content %}
 <h1>{{ title }}</h1>
+<div class="columns is-flex is-centered">
+  <div class="box">
+    <figure class="image">
+      <img src="{{ url_for('video_feed') }}">
+    </figure>
+  </div>
+</div>
 {% endblock %}
