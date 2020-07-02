@@ -1,7 +1,7 @@
 initialise: enable-camera apt-installs set-python install-poetry install
 
 install:
-	poetry install --no-dev --extras picamera
+	poetry install --extras picamera #--no-dev
 
 set-python:
 	sudo update-alternatives --install /usr/local/bin/python python /usr/bin/python2 1
