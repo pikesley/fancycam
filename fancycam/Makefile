@@ -15,6 +15,9 @@ isort:
 lint:
 	poetry run pylint \
 		--disable C0114 \
+		--disable C0330 \
+		--disable R0201 \
+		--disable R0903 \
 		fancycam/ tests/
 
 test:
@@ -33,6 +36,7 @@ clean:
 	@find . -depth -name __pycache__ -exec rm -fr {} \;
 	@find . -depth -name .pytest_cache -exec rm -fr {} \;
 	@find . -depth -name ".coverage.*" -exec rm {} \;
+	@find . -depth -name "*egg-info" -exec rm -fr {} \;
 
 push-code: clean
 	rsync -av /opt/${PROJECT} pi@${PIHOST}:

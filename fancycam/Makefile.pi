@@ -1,3 +1,5 @@
+GPU_RAM = 256
+
 initialise: enable-camera apt-installs set-python install-poetry install
 
 install:
@@ -16,8 +18,9 @@ apt-installs:
 	sudo apt-get install -y python3-pip python3-venv vim screen
 
 enable-camera:
-	cat /boot/config.txt | grep -v start_x > /tmp/config.txt
+	cat /boot/config.txt | grep -v start_x | grep -v gpu_mem > /tmp/config.txt
 	echo start_x=1 >> /tmp/config.txt
+	echo gpu_mem=${GPU_RAM} >> /tmp/config.txt
 	sudo cp /tmp/config.txt /boot/
 
 remote-atom:
